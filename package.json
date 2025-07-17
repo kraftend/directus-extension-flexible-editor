@@ -56,7 +56,6 @@
     },
     "files": [
         "dist",
-        "content",
         "shared"
     ],
     "scripts": {
