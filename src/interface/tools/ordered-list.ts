@@ -1,7 +1,6 @@
 // https://tiptap.dev/api/nodes/ordered-list
 
-import OrderedList from "@tiptap/extension-ordered-list";
-import ListItem from "@tiptap/extension-list-item";
+import { ListItem, OrderedList } from "@tiptap/extension-list";
 import { defineTool } from "../lib";
 import customMessages from "../i18n/custom-messages";
 import type { Editor } from "@tiptap/core";

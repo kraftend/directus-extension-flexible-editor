@@ -26,8 +26,8 @@ export const fetchAll = async <T = unknown>(
 
     if (!info.queryLimit || info.queryLimit?.max === -1) {
         // do a single request if possible
-        set(config, "params.limit", -1);
-        const { data } = await api.get(url, config);
+        set(config as any, "params.limit", -1);
+        const { data } = await api.get(url as string, config as any);
         return data.data as T[];
     }
 
@@ -36,10 +36,10 @@ export const fetchAll = async <T = unknown>(
 
     while (result.length < limit && hasMore === true) {
         const configWithPagination = cloneDeep(config);
-        set(configWithPagination, "params.page", page);
-        set(configWithPagination, "params.limit", pageSize);
+        set(configWithPagination as any, "params.page", page);
+        set(configWithPagination as any, "params.limit", pageSize);
 
-        const { data } = await api.get(url, configWithPagination);
+        const { data } = await api.get(url as string, configWithPagination as any);
 
         if (data.data.length === 0) {
             hasMore = false;

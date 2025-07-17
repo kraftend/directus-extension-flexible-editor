@@ -24,12 +24,12 @@ export type Tool = {
 
 export type ToolButtonProps = {
     title: string;
-    icon: string | boolean;
-    display: string | boolean;
+    icon?: string | boolean;
+    display?: string | boolean;
     action: (attrs?: any) => void;
-    shortcut: Tool["shortcut"];
-    active: boolean;
-    disabled: boolean;
+    shortcut?: Tool["shortcut"];
+    active?: boolean;
+    disabled?: boolean;
 };
 
 export type CustomToolButtonProps = ToolButtonProps & { editor: Editor };

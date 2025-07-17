@@ -58,7 +58,7 @@ export function useRelationM2A(collection: Ref<string>, field: Ref<string>) {
         );
 
         const junction = relations.find(
-            (relation) =>
+            (relation: any) =>
                 relation.related_collection === collection.value &&
                 relation.meta?.one_field === field.value &&
                 relation.meta.junction_field
@@ -67,7 +67,7 @@ export function useRelationM2A(collection: Ref<string>, field: Ref<string>) {
         if (!junction) return undefined;
 
         const relation = relations.find(
-            (relation) =>
+            (relation: any) =>
                 relation.collection === junction.collection &&
                 relation.field === junction.meta?.junction_field
         );
@@ -76,14 +76,14 @@ export function useRelationM2A(collection: Ref<string>, field: Ref<string>) {
 
         const allowedCollections = (
             relation.meta?.one_allowed_collections ?? []
-        ).reduce((acc, collection) => {
+        ).reduce((acc: any, collection: any) => {
             const collectionInfo = collectionsStore.getCollection(collection);
             if (collectionInfo) acc.push(collectionInfo);
             return acc;
         }, [] as Collection[]);
 
         const relationPrimaryKeyFields = allowedCollections.reduce(
-            (acc, collection) => {
+            (acc: any, collection: any) => {
                 const pkField = fieldsStore.getPrimaryKeyFieldForCollection(
                     collection?.collection
                 );

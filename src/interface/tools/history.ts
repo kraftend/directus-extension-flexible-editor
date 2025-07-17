@@ -1,6 +1,6 @@
 // https://tiptap.dev/api/extensions/history
 
-import History from "@tiptap/extension-history";
+import { UndoRedo as History } from "@tiptap/extensions";
 import { defineTool } from "../lib";
 import customMessages from "../i18n/custom-messages";
 import type { Editor } from "@tiptap/core";

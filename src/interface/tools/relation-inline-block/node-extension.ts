@@ -45,6 +45,7 @@ export default Node.create({
     },
 
     addNodeView() {
+        // @ts-expect-error - not typed correctly
         return VueNodeViewRenderer(NodeView);
     },
 

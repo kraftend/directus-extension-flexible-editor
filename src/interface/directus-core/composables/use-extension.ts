@@ -5,8 +5,8 @@ import type {
     AppExtensionConfigs,
     AppExtensionType,
     HybridExtensionType,
-    Plural,
-} from "@directus/types";
+} from "@directus/extensions";
+import { Plural } from "@directus/types";
 // [START] different from original
 // import { useExtensions } from "@/extensions";
 import { useExtensions } from "@directus/extensions-sdk";

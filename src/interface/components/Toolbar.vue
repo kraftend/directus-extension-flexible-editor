@@ -75,7 +75,8 @@
 
 <script setup lang="ts">
     import { ref, computed } from 'vue';
-    import { FloatingMenu, type Editor } from '@tiptap/vue-3';
+    import { type Editor } from '@tiptap/vue-3';
+    import { FloatingMenu } from '@tiptap/vue-3/menus';
     import ToolButton from './ToolButton.vue';
     import { translateShortcut } from '../directus-core/utils/translate-shortcut';
     import { useI18n } from "vue-i18n";
@@ -136,23 +137,23 @@
         type FloatingMenuProps = {
             editor: FloatingMenuPluginProps['editor'];
             shouldShow: FloatingMenuPluginProps['shouldShow'];
-            tippyOptions: FloatingMenuPluginProps['tippyOptions'];
+            options: FloatingMenuPluginProps['options'];
         };
 
         const floatingMenuProps: FloatingMenuProps = {
             editor: props.editor,
             shouldShow: ({ editor }) => editor.isFocused,
-            tippyOptions: {
+            options: {
                 placement: 'top',
-                maxWidth: 'none',
-                zIndex: 500,
-                arrow: true,
-                popperOptions: {
-                    modifiers: [
-                        { name: 'arrow', options: { padding } },
-                        { name: 'preventOverflow', options: { boundary: props.editor.view.dom } },
-                    ],
-                },
+                // maxWidth: 'none',
+                // zIndex: 500,
+                // arrow: true,
+                // popperOptions: {
+                //     modifiers: [
+                //         { name: 'arrow', options: { padding } },
+                //         { name: 'preventOverflow', options: { boundary: props.editor.view.dom } },
+                //     ],
+                // },
             },
         };
 
