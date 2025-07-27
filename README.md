@@ -6,7 +6,7 @@
 >
 > **Changes in this fork**: 
 > - Upgraded to Tiptap v3 and other dependencies to latest versions
-> - Removed content renderer package and examples
+> - Removed content renderer package and examples in favor of TipTap's static renderer.
 >
 > **License**: This fork maintains the same license as the original project.
 
